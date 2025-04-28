@@ -10,7 +10,9 @@ print("Hello World!")
 print("\t-- ",_VERSION,"!")
 
 --[[
-	Outputs to the current file
+	Outputs to the current open file
+	More control over output formatting
+	Should be used over print
 ]]
 io.write("Hello World!\n")
 io.write("\t-- ",_VERSION,"!\n")

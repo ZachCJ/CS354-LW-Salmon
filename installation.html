@@ -1,30 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Lua Installation</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="navbar">
-    <div class="div-logo">
-        <img src="Lua-Logo-Static.gif" draggable="false" alt="Lua logo" class="nav-logo">
+    <div class="navbar">
+        <div class="div-logo">
+            <img src="Lua-Logo-Static.gif" draggable="false" alt="Lua logo" class="nav-logo">
+        </div>
+        <nav>
+            <ul class="navList">
+                <li class="navLinks"><a href="index.html">About</a></li>
+                <li class="navLinks"><a href="installation.html">Install</a></li>
+                <li class="navLinks"><a href="examples.html">Examples</a></li>
+                <li class="navLinks"><a href="resources.html">Resources</a></li>
+                <li class="navLinks"><a href="why.html">Why Lua?</a></li>
+            </ul>
+        </nav>
     </div>
-    <nav>
-        <ul class="navList">
-            <li class="navLinks"><a href="index.html">About</a></li>
-            <li class="navLinks"><a href="installation.html">Install</a></li>
-            <li class="navLinks"><a href="examples.html">Examples</a></li>
-            <li class="navLinks"><a href="resources.html">Resources</a></li>
-            <li class="navLinks"><a href="why.html">Why Lua?</a></li>
+    <div class="page-content">
+        <h1>Installing Lua</h1>
+        <p>
+            Lua is an free programing lanugage with no standards and an interpretor that is a primarily distributed<br>
+            as source code. This has give Lua an edge over other languages, allowing the interpretor to be compiled<br>
+            with external libraries allowing for optimizations to execution speed and binarie size.
+        </p>
+        <p>
+            Distributed Lua as source code has allowed it be fast and adaptable, it has lead to many project being<br>
+            incompatable with other installation of Lua. Additionaly, adding compilalbe libraries and modifying the<br>
+            Lua interpretor it not alway an option for many developers. Inorder to midigate these issues, team Lua<br>
+            created the <a href="https://luabinaries.sourceforge.net/">LuaBinaries</a> site which contains pre-compiled
+            Lua libraries and executables in addition to<br> the <a href="http://lua-users.org/wiki/">Lua-Users
+                Wiki</a>.
+        </p>
+
+        <h2>Source Code</h2>
+        <p>
+            Building Lua from source code has been made easy through the power of Makefiles. The source code can be<br>
+            downloaded from Lua's <a href="https://www.lua.org/ftp/"></a>offical website<a> with additional build
+                instructions in the Lua <a href="https://www.lua.org/manual/5.4/readme.html">manual<a>.
+        </p>
+
+        <h1>Binaries and Libraries</h1>
+
+        <h2>Binaries</h2>
+        <p>
+            <a href="https://luabinaries.sourceforge.net/">LuaBinaries</a> is a distribution of the Lua libraries and
+            executables compiled for several platforms.
+        </p>
+        <p>
+            The <a href="https://luabinaries.sourceforge.net/">LuaBinaries</a> files are intended for advanced users and
+            programmers who want to incorporate Lua in their<br>
+            applications or distributions and would like to keep compatibility with <a
+                href="https://luabinaries.sourceforge.net/">LuaBinaries</a>, so they also will be<br> compatible with
+            many other modules available on the Internet.<br>
+        </p>
+
+        <h2>LuaRocks</h2>
+        <p>
+            <a href="https://luarocks.org/">LuaRocks</a> is the package manager for Lua modules.
+        </p>
+        <p>
+            It allows you to create and install Lua modules as self-contained packages called rocks. You can download
+            and install LuaRocks on Unix and Windows. <a href="https://luarocks.org/#quick-start">Get started</a>
+        </p>
+        <p>
+            LuaRocks is free software and uses the same <a href="https://www.lua.org/license.html">license</a> as Lua.
+        </p>
+
+        <h2>Lua Wiki</h2>
+        <p>
+            The <a href="http://lua-users.org/wiki/"></a>Lua-User Wiki</a> is large <i>community-maintained</i>
+            collection of information and addons for the Lua<br> programming lanugage.
+        </p>
+        <p>
+            The <a href="http://lua-users.org/wiki/LuaDirectory">Lua Directory</a> lists all of the content for the wiki
+            grouped by the following topics:
+        <ul>Tower
+
+            <li>Introduction to Lua</li>
+            <li>Language Definition and Features</li>
+            <li>Code Structure / Programming Paradigms</li>
+            <li>Data Structures/Types</li>
+            <li>Algorithms / Data Manipulation</li>
+            <li>Building, Binding, and Packaging</li>
+            <li>Extending and Using Lua</li>
+            <li>Problem Domains</li>
+            <li>Lua Implementation</li>
+            <li>Code Improvement</li>
+            <li>Archive</li>
+            <li>Community</li>
+            <li>lua-users website</li>
         </ul>
-    </nav>
-</div>
-<div class="page-content">
-    <h1>Translators</h1>
-    <p>Placeholder</p>
-    <h1>Installation</h1>
-    <p>Placeholder</p>
-</div>
+        </p>
+
+        <h2>Awesome Lua</h2>
+        <p>
+            <a href="https://github.com/LewisJEllis/awesome-lua">Awesome Lua</a> is a curated list of quality Lua <a
+                href="https://github.com/LewisJEllis/awesome-lua#packages">packages</a> and <a
+                href="https://github.com/LewisJEllis/awesome-lua?tab=readme-ov-file#resources">resources.</a> <a
+                href="https://github.com/LewisJEllis">Lewis J Ellis</a> began<br>working on this list of package and
+            resources in Aug 17, 2014.
+        </p>
+        <p>
+            The list contains categories such as:
+        <ul>
+            <li>Implementations, Interpreters, and Bindings</li>
+            <li>Package Managers</li>
+            <li>Build Tools and Standalone Makers</li>
+            <li>Debugging and Profiling</li>
+            <li>IDEs and Plugins</li>
+            <li>Utility Belts</li>
+            <li>Game Engines</li>
+            <li>Community</li>
+            <li>References</li>
+            <li>Style Guides</li>
+        </ul>
+        </p>
+    </div>
 </body>
+
 </html>
