@@ -25,8 +25,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
 
-    display: flex;
-    flex: 1;
+    display: block;
 }
 
 .div-logo {
@@ -38,6 +37,7 @@
     display: flex;
     list-style-type: none;
     align-content: space-evenly;
+    flex-grow: 50;
 }
 
 
@@ -49,10 +49,11 @@
 
 .navLinks{
     border-radius: 10px;
-    display: block;
-    margin-left: 20%;
-    margin-top: 25px;
-    padding: 10px 10px;
+    display: flex;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 10px 15px;
 }
 
 .navLinks:hover {
@@ -65,8 +66,25 @@
     text-decoration: none;
     margin: auto;
     text-align: center;
+    font-size: x-large;
 }
 
 .page-content {
      margin-top: 150px;
+}
+
+h1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: xxx-large;
+}
+
+p {
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: large;
+}
+
+scale {
+    font-size: 150%;
 }
