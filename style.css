@@ -71,6 +71,9 @@
 
 .page-content {
      margin-top: 150px;
+     margin-right: 5%;
+     margin-left: 5%;
+     margin-bottom: 300px;
 }
 
 h1 {
@@ -88,3 +91,18 @@ p {
 scale {
     font-size: 150%;
 }
+
+table {
+    border-spacing: 50px;
+    border: medium dashed gray;
+}
+
+th {
+    font-size: xxx-large;
+}
+
+td {
+    font-size: xx-large;
+}
+
+
