@@ -1,3 +1,4 @@
+#!/usr/bin/lua hellolua.lua
 -- Lua greets the world!
 
 --[[

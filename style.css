@@ -4,7 +4,7 @@
     left: 0;
     display: flex;
     border-radius: 0 0 15px 15px;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
     position: fixed;
     top: 0;
     width: 100%;
@@ -47,7 +47,7 @@
     margin: auto;
 }
 
-.navLinks{
+.navLinks {
     border-radius: 10px;
     display: flex;
     margin-top: 2%;
@@ -70,7 +70,11 @@
 }
 
 .page-content {
-     margin-top: 150px;
+    margin-top: 150px;
+}
+
+.scale {
+    font-size: 150%;
 }
 
 h1 {
@@ -83,6 +87,21 @@ p {
     margin-left: 3%;
     margin-right: 3%;
     font-size: large;
+}
+
+pre code {
+    display: block;
+    white-space: pre;
+    margin-left: 100px;
+    margin-right: 100px;
+    max-width: 100%;
+    min-width: 100px;
+    color: lightgrey;
+    background: #1a1a1a;
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    border-radius: .5rem;
+    padding: 1px;
 }
 
 scale {

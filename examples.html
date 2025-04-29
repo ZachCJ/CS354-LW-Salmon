@@ -2,88 +2,202 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Lua Examples</title>
-    <link rel="stylesheet" href="style.css">
+   <meta charset="UTF-8">
+   <title>Lua Examples</title>
+   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="div-logo">
-            <img src="Lua-Logo-Static.gif" draggable="false" alt="Lua logo" class="nav-logo">
-        </div>
-        <nav>
-            <ul class="navList">
-                <li class="navLinks"><a href="index.html">About</a></li>
-                <li class="navLinks"><a href="installation.html">Install</a></li>
-                <li class="navLinks"><a href="examples.html">Examples</a></li>
-                <li class="navLinks"><a href="resources.html">Resources</a></li>
-                <li class="navLinks"><a href="why.html">Why Lua?</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="page-content">
-        <h1>Hello Lua</h1>
-        <pre>
+   <div class="navbar">
+      <div class="div-logo">
+         <img src="Lua-Logo-Static.gif" draggable="false" alt="Lua logo" class="nav-logo">
+      </div>
+      <nav>
+         <ul class="navList">
+            <li class="navLinks"><a href="index.html">About</a></li>
+            <li class="navLinks"><a href="installation.html">Install</a></li>
+            <li class="navLinks"><a href="examples.html">Examples</a></li>
+            <li class="navLinks"><a href="resources.html">Resources</a></li>
+            <li class="navLinks"><a href="why.html">Why Lua?</a></li>
+         </ul>
+      </nav>
+   </div>
+
+   <div class="page-content">
+      <div class="hello-lua">
+         <h1>Hello Lua</h1>
+         <pre class="scale">
+            <code>
+   -- Lua greets the world!
+
+   --[[
+      Always output to stdout
+      Applies tostring to each argument
+      Appends a newline
+      May act unpredictably
+   ]]
+   print("Hello World!")
+   print("\t-- ",_VERSION,"!")
+
+   --[[
+      Outputs to the current open file
+      More control over output formatting
+      Should be used over print
+   ]]
+   io.write("Hello World!\n")
+   io.write("\t-- ",_VERSION,"!\n")
+            </code>
+         </pre>
+
+         <h2>Console Output</h2>
+         <pre class="scale">
+            <code>      
+   $ lua ./scripts/hellolua.lua 
+   Hello World!
+         --      Lua 5.3 !
+   Hello World!
+         -- Lua 5.3!
+            </code>
+         </pre>
+      </div>
+
+      <div class="mergesort">
+         <h1>Merge Sort</h1>
+         <pre class="scale">
             <code class="language-lua">
-                -- Lua greets the world!
+   function mergesort(array)
+      local left = {}
+      local right = {}
+      local size = #array
+      local middle = size / 2
+      local index = 1
+      local i = 1
 
-                --[[
-                    Always output to stdout
-                    Applies tostring to each argument
-                    Appends a newline
-                    May act unpredictably
-                ]]
-                print("Hello World!")
-                print("\t-- ",_VERSION,"!")
-                
-                --[[
-                    Outputs to the current open file
-                    More control over output formatting
-                ]]
-                io.write("Hello World!\n")
-                io.write("\t-- ",_VERSION,"!\n")
+      if size <= 1 then
+         return array
+      end
+      i = 1
+      while index <= middle do
+         left[i] = array[index]
+         index = index + 1
+         i = i + 1
+      end
+      i = 1
+      while index <= size do
+         right[i] = array[index]
+         index = index + 1
+         i = i + 1
+      end
+      left = mergesort(left)
+      right = mergesort(right)
+
+
+      return merge(left, right)
+   end
+
+   function merge(left, right)
+      local merged = {}
+      local leftSize = #left
+      local rightSize = #right
+      local leftIndex = 1
+      local rightIndex = 1
+      local index = 1
+      while leftIndex <= leftSize and rightIndex <= rightSize do
+         if left[leftIndex] < right[rightIndex] then
+               merged[index] = left[leftIndex]
+               leftIndex = leftIndex + 1
+               index = index + 1
+         else
+               merged[index] = right[rightIndex]
+               rightIndex = rightIndex + 1
+               index = index + 1
+         end
+      end
+      while leftIndex <= leftSize do
+         merged[index] = left[leftIndex]
+         leftIndex = leftIndex + 1
+         index = index + 1
+      end
+      while rightIndex <= rightSize do
+         merged[index] = right[rightIndex]
+         rightIndex = rightIndex + 1
+         index = index + 1
+      end
+      return merged
+   end
+
+   function randomArray(array)
+      array = array or {}
+      local size = math.random(5, 25)
+      for i = 1, size do
+         array[i] = math.random(0, 100)
+      end
+   end
+
+   function printArray(array)
+      if (array and #array > 1) then
+         io.write("[", array[1])
+         for i = 2, #array do
+               io.write(", ", array[i])
+         end
+         io.write("]\n")
+      end
+   end
+
+   -- Set rand seed using current time
+   math.randomseed(os.time())
+
+   -- Generate random array
+   array = {}
+   randomArray(array)
+
+   io.write("Unsorted Array:\n")
+   printArray(array)
+
+   -- Sort the array
+   array = mergesort(array)
+
+   io.write("Sorted Array:\n")
+   printArray(array)
             </code>
-        </pre>
+         </pre>
 
-        <h2>Console Output</h2>
-        <pre>
+         <h2>Console Output</h2>
+         <pre class="scale">
             <code class="console">
-                Hello World!
-                        --      Lua 5.3 !
-                Hello World!
-                        -- Lua 5.3!
+   $ lua mergesort.lua
+   Unsorted Array:
+   [14, 41, 44, 12, 94, 67, 100, 81, 45, 95, 32, 3, 28, 54, 38, 48, 82, 87, 11, 21, 84, 33, 67, 14]
+   Sorted Array:
+   [3, 11, 12, 14, 14, 21, 28, 32, 33, 38, 41, 44, 45, 48, 54, 67, 67, 81, 82, 84, 87, 94, 95, 100]
+   $ lua mergesort.lua
+   Unsorted Array:
+   [15, 1, 10, 22, 24, 64, 2, 22, 49, 75, 32, 79, 24, 84, 78]
+   Sorted Array:
+   [1, 2, 10, 15, 22, 22, 24, 24, 32, 49, 64, 75, 78, 79, 84]
+   $ lua mergesort.lua
+   Unsorted Array:
+   [46, 33, 3, 44, 60, 93, 83, 81, 50, 91, 72, 34, 22]
+   Sorted Array:
+   [3, 22, 33, 34, 44, 46, 50, 60, 72, 81, 83, 91, 93]
             </code>
-        </pre>
-
-        <h1>Simple IO</h1>
-        <pre>
+         </pre>
+      </div>
+<!-- 
+      <h1>Complex Problem</h1>
+      <pre>
             <code class="language-lua">
                 -- Lua Code
             </code>
         </pre>
 
-        <h2>Console Output</h2>
-        <pre>
+      <h2>Console Output</h2>
+      <pre>
             <code class="console">
                 Lua
             </code>
         </pre>
-
-        <h1>Complex Problem</h1>
-        <pre>
-            <code class="language-lua">
-                -- Lua Code
-            </code>
-        </pre>
-        
-        <h2>Console Output</h2>
-        <pre>
-            <code class="console">
-                Lua
-            </code>
-        </pre>
-    </div>
+   </div> -->
 </body>
 
 </html>
