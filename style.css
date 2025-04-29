@@ -70,7 +70,10 @@
 }
 
 .page-content {
-    margin-top: 150px;
+     margin-top: 150px;
+     margin-right: 5%;
+     margin-left: 5%;
+     margin-bottom: 300px;
 }
 
 .scale {
@@ -107,3 +110,18 @@ pre code {
 scale {
     font-size: 150%;
 }
+
+table {
+    border-spacing: 50px;
+    border: medium dashed gray;
+}
+
+th {
+    font-size: xxx-large;
+}
+
+td {
+    font-size: xx-large;
+}
+
+
